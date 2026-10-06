@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edexcel IAL Chemistry — Unit 2 Revision Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  // Apply saved theme + study mode before paint to avoid flash
+  (function () {
+    try {
+      var t = localStorage.getItem('ial-chem-theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var m = localStorage.getItem('ial-chem-mode');
+      if (m === 'study') document.documentElement.setAttribute('data-mode', 'study');
+    } catch (e) { /* storage unavailable */ }
+  })();
+</script>
+</head>
+<body>
+
+<!-- SVG defs for flask logo -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="flask" viewBox="0 0 24 24">
+      <path d="M9 3h6v2h-1v5l4.2 7.6A2.4 2.4 0 0 1 16.1 21H7.9a2.4 2.4 0 0 1-2.1-3.4L10 9V5H9V3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M7.2 15.5h9.6" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="10.6" cy="17.6" r="0.9" fill="currentColor"/>
+      <circle cx="13.4" cy="18.4" r="0.7" fill="currentColor"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="site-header" id="top">
+  <a class="brand" href="#top">
+    <svg class="brand-icon"><use href="#flask"/></svg>
+    <span>
+      <strong>IAL Chemistry</strong>
+      <small>Edexcel Unit 2 · Revision Notes</small>
+    </span>
+  </a>
+  <nav class="main-nav">
+    <a href="#topic7">Topic 7</a>
+    <a href="#topic8">Topic 8</a>
+    <button class="mode-toggle" id="modeToggle" aria-pressed="false" title="Focus mode: show one section at a time (shortcut: m)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/>
+        <circle cx="12" cy="12" r="2.8"/>
+      </svg>
+      <span>Focus</span>
+    </button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle colour theme" title="Toggle theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4.2"/>
+        <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5 5l1.7 1.7M17.3 17.3 19 19M19 5l-1.7 1.7M6.7 17.3 5 19"/>
+      </svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 13.5A8.5 8.5 0 1 1 10.5 4a6.8 6.8 0 0 0 9.5 9.5z"/>
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Comprehensive specification guides</p>
+    <h1>Edexcel IAL Chemistry<br><span class="accent-word">Unit&nbsp;2</span> Study Hub</h1>
+    <p class="hero-sub">Every specification point from Topic 7 and Topic 8, organised for fast revision — equations, trends, colours, observations and exam-assessed practical details.</p>
+    <div class="hero-cards">
+      <a class="hero-card" href="#topic7">
+        <span class="chip chip-teal">Topic 7</span>
+        <h2>Intermolecular Forces</h2>
+        <p>Specification points 7.1 – 7.6</p>
+        <ul class="hero-learn"><li>London &amp; dipole forces</li><li>Hydrogen bonding</li><li>Boiling-point trends</li></ul>
+        <span class="arrow">Explore ↓</span>
+      </a>
+      <a class="hero-card" href="#topic8">
+        <span class="chip chip-amber">Topic 8</span>
+        <h2>Redox Chemistry &amp; Groups 1, 2 and 7</h2>
+        <p>Parts 8A · 8B · 8C</p>
+        <ul class="hero-learn"><li>Oxidation numbers</li><li>Group trends &amp; equations</li><li>Tests &amp; colours</li></ul>
+        <span class="arrow">Explore ↓</span>
+      </a>
+    </div>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#topic7">Start revising ↓</a>
+      <button class="btn btn-ghost" id="modeToggleHero" type="button">◎ Try Focus mode</button>
+      <button type="button" class="btn btn-ghost expand-all-btn" data-expand="topic7">▾ Open all Topic 7</button>
+      <button type="button" class="btn btn-ghost expand-all-btn" data-expand="topic8">▾ Open all Topic 8</button>
+    </div>
+  </div>
+  <svg class="hero-bubbles" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true">
+    <circle cx="60" cy="150" r="10" class="b b1"/><circle cx="140" cy="120" r="6" class="b b2"/>
+    <circle cx="250" cy="160" r="14" class="b b3"/><circle cx="330" cy="100" r="5" class="b b4"/>
+    <circle cx="430" cy="140" r="9" class="b b5"/><circle cx="520" cy="110" r="12" class="b b6"/>
+    <circle cx="580" cy="160" r="6" class="b b7"/>
+  </svg>
+</section>
+
+<main>
+  <div class="controls-bar" id="controlsBar">
+    <span class="cb-label">View:</span>
+    <button type="button" class="cb-btn active" data-view="compact" title="Sections collapsed — click any card to open it">▤ Compact cards</button>
+    <button type="button" class="cb-btn" data-view="expanded" title="All sections open, scroll through everything">▦ Expanded notes</button>
+    <span class="cb-sep" aria-hidden="true"></span>
+    <button type="button" class="cb-btn cb-focus" id="focusBtnTop" title="Focus mode: one section at a time with Prev/Next (shortcut: m)">◎ Focus mode</button>
+    <span class="cb-progress"><span class="cb-progress-text" id="progressText">0 of 26 sections read</span><span class="cb-bar"><span class="cb-bar-fill" id="readBarFill"></span></span></span>
+  </div>
+
+  <!-- ================= TOPIC 7 ================= -->
+  <article class="topic" id="topic7">
+    <div class="topic-banner teal">
+      <h2>Topic 7: Intermolecular Forces</h2>
+      <p>This comprehensive guide covers every specification point in Topic 7 (Intermolecular Forces) for Edexcel IAL Chemistry Unit 2, detailed step by step.</p>
+    </div>
+
+    <nav class="topic-overview" aria-label="Topic 7 roadmap">
+      <h6><span class="ov-icon" aria-hidden="true">🗺️</span> How to work through Topic 7 — click any step to jump there</h6>
+      <ol class="ov-steps">
+        <li><a href="#sp-7-1"><b>7.1</b><i>The three forces explained</i></a></li>
+        <li><a href="#sp-7-2"><b>7.2</b><i>H-bonds in H₂O, NH₃ &amp; HF</i></a></li>
+        <li><a href="#sp-7-3"><b>7.3</b><i>Why water is anomalous</i></a></li>
+        <li><a href="#sp-7-4"><b>7.4</b><i>Predicting H-bonding</i></a></li>
+        <li><a href="#sp-7-5"><b>7.5</b><i>Forces → boiling points</i></a></li>
+        <li><a href="#sp-7-6"><b>7.6</b><i>Choosing solvents</i></a></li>
+      </ol>
+      <div class="mnemonic">
+        <span class="mn-label">Memory hook</span>
+        <span class="mn-chip"><b>L</b>ondon</span>→<span class="mn-chip"><b>D</b>ipole–dipole</span>→<span class="mn-chip"><b>H</b>-bonding</span>
+        <em>“<b>L</b>ittle <b>D</b>ogs <b>H</b>unt” — weakest to strongest.</em>
+      </div>
+    </nav>
+
+    <section class="sp" id="sp-7-1">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-7-1">
+        <span class="sp-title"><span class="sp-num">7.1</span> Understand the Nature of Intermolecular Forces</span>
+        <span class="sp-meta"><span class="key-points">3 key ideas</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-7-1">
+      <p>Intermolecular forces (non-bonded interactions) are weak attractive forces that exist between separate molecules or uncombined noble gas atoms, distinct from strong intramolecular ionic, metallic, or covalent bonds within molecules.</p>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.1(i)</span> London Forces (Instantaneous Dipole–Induced Dipole / Dispersion Forces)</h4>
+        <ul class="point-list">
+          <li><strong>Mechanism:</strong> Electrons within an atom or non-polar molecule are in continuous, random motion. At any given instant, the electron cloud density may fluctuate unevenly across the molecule, giving rise to an instantaneous (temporary) dipole.</li>
+          <li><strong>Induction:</strong> This temporary dipole distorts the electron cloud of a neighbouring molecule, inducing an induced dipole of opposite charge.</li>
+          <li><strong>Attraction:</strong> The δ<sup>+</sup> end of one temporary dipole attracts the δ<sup>−</sup> end of the neighbouring induced dipole.</li>
+          <li><strong>Occurrence:</strong> London forces exist between all atoms and molecular species (whether polar or non-polar), as well as monatomic noble gases, but do not exist in giant ionic lattices.</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.1(ii)</span> Permanent Dipole–Permanent Dipole Interactions</h4>
+        <ul class="point-list">
+          <li><strong>Mechanism:</strong> These forces occur between polar molecules that possess permanent dipoles resulting from differences in electronegativity across covalent bonds.</li>
+          <li><strong>Attraction:</strong> Electrostatic attraction occurs between the permanent δ<sup>+</sup> region of one molecule and the permanent δ<sup>−</sup> region of an adjacent molecule.</li>
+          <li><strong>Relative Strength:</strong> For small molecules containing similar numbers of total electrons, permanent dipole–dipole interactions are generally stronger than London forces. For instance, propanone (polar) has a higher boiling temperature (56°C) than butane (non-polar, 0°C) because more energy is required to break permanent dipole forces.</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.1(iii)</span> Hydrogen Bonds</h4>
+        <ol class="num-list">
+          <li><strong>Mechanism:</strong> Hydrogen bonding is a particularly strong, specialized form of permanent dipole–permanent dipole interaction.</li>
+          <li><strong>Requirements:</strong>
+            <ul class="inner-list">
+              <li>A hydrogen atom covalently attached directly to one of the three most electronegative elements: Nitrogen (N), Oxygen (O), or Fluorine (F).</li>
+              <li>A lone pair of electrons on the N, O, or F atom of an adjacent molecule.</li>
+            </ul>
+          </li>
+          <li><strong>Explanation:</strong> The high electronegativity difference strongly pulls shared electrons away from the hydrogen atom. Because hydrogen has no inner shell of shielding electrons, its positive nucleus is exposed, creating a high δ<sup>+</sup> charge density that strongly attracts the lone pair on a neighbouring N, O, or F atom.</li>
+          <li><strong>Relative Strength Hierarchy:</strong>
+            <div class="strength-scale" role="img" aria-label="Strength hierarchy from strongest to weakest">
+              <span class="ss ss-1">Covalent bonds</span><span class="ss-gt">≫</span>
+              <span class="ss ss-2">Hydrogen bonds</span><span class="ss-gt">&gt;</span>
+              <span class="ss ss-3">Permanent dipole–dipole forces</span><span class="ss-gt">&gt;</span>
+              <span class="ss ss-4">London dispersion forces</span>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-7-2">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-7-2">
+        <span class="sp-title"><span class="sp-num">7.2</span>Hydrogen Bonding in H<sub>2</sub>O, Liquid NH<sub>3</sub>, and Liquid HF</span>
+        <span class="sp-meta"><span class="key-points">3 key ideas</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-7-2">
+      <p>Hydrogen bonding significantly dictates the behaviour of simple hydrides containing N, O, and F:</p>
+      <div class="hydride-grid">
+        <div class="hydride-card">
+          <h5>Water (H<sub>2</sub>O)</h5>
+          <ul class="point-list">
+            <li>Each oxygen atom has two O–H bonds and two lone pairs of electrons.</li>
+            <li>Water molecules can form an extensive 3D hydrogen-bonded network with up to four hydrogen bonds per molecule.</li>
+          </ul>
+        </div>
+        <div class="hydride-card">
+          <h5>Ammonia (NH<sub>3</sub>)</h5>
+          <ul class="point-list">
+            <li>Nitrogen forms three N–H bonds and possesses one lone pair of electrons.</li>
+            <li>Because it has only one lone pair, ammonia forms an average of one hydrogen bond per molecule, making its intermolecular attraction less extensive than water's.</li>
+          </ul>
+        </div>
+        <div class="hydride-card">
+          <h5>Hydrogen Fluoride (HF)</h5>
+          <ul class="point-list">
+            <li>Fluorine is the most electronegative element and has three lone pairs, but only one hydrogen atom per molecule.</li>
+            <li>HF forms long linear hydrogen-bonded chains (HF)<sub>n</sub>. Despite having strong individual hydrogen bonds, HF forms fewer hydrogen bonds per molecule overall compared to water.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-7-3">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-7-3">
+        <span class="sp-title"><span class="sp-num">7.3</span> Anomalous Properties of Water Resulting from Hydrogen Bonding</span>
+        <span class="sp-meta"><span class="key-points">2 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-7-3">
+      <p>Water exhibits two major anomalous physical properties directly caused by its extensive hydrogen bonding network:</p>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.3(i)</span> High Melting and Boiling Temperatures</h4>
+        <ul class="point-list obs">
+          <li><strong>Observation:</strong> Water has anomalously high melting and boiling points (and enthalpy of vaporisation) compared to other Group 6 hydrides (H<sub>2</sub>S, H<sub>2</sub>Se, H<sub>2</sub>Te) and molecules of comparable molar mass.</li>
+          <li><strong>Explanation:</strong> While H<sub>2</sub>S, H<sub>2</sub>Se, and H<sub>2</sub>Te are held together primarily by weaker London dispersion forces, liquid water requires a large amount of thermal energy to overcome its extensive network of strong hydrogen bonds.</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.3(ii)</span> Lower Density of Ice Compared to Liquid Water</h4>
+        <ul class="point-list obs">
+          <li><strong>Observation:</strong> Ice floats on liquid water because solid ice at 0°C is less dense than liquid water at 0°C.</li>
+          <li><strong>Explanation:</strong> In liquid water, hydrogen bonds constantly break and re-form dynamically. When water freezes into ice, the molecules are locked into a fixed, rigid 3D hexagonal ring structure held open by 4 hydrogen bonds per molecule. This arrangement creates an open, cage-like structure with large empty spaces. When ice melts, this open ring framework collapses, allowing water molecules to pack closer together, which increases the liquid's density.</li>
+        </ul>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-7-4">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-7-4">
+        <span class="sp-title"><span class="sp-num">7.4</span> Predicting Hydrogen Bonding in Analogous Molecules</span>
+        <span class="sp-meta"><span class="key-points">4 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-7-4">
+      <p>Hydrogen bonding can be predicted in any compound where hydrogen is bonded to nitrogen or oxygen:</p>
+      <ul class="point-list">
+        <li><strong>Alcohols (R–OH):</strong> Form intermolecular hydrogen bonds via the hydroxyl group.</li>
+        <li><strong>Carboxylic Acids (R–COOH):</strong> Form hydrogen-bonded dimers in non-polar solvents.</li>
+        <li><strong>Amines (R–NH<sub>2</sub>, R<sub>2</sub>–NH) &amp; Amides (R–CONH<sub>2</sub>):</strong> Form hydrogen bonds via N–H groups and lone pairs on nitrogen.</li>
+        <li><strong>Proteins &amp; Biological Macromolecules:</strong> Rely on N–H···O=C hydrogen bonds to maintain secondary structures.</li>
+      </ul>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-7-5">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-7-5">
+        <span class="sp-title"><span class="sp-num">7.5</span> Intermolecular Forces and Physical Properties</span>
+        <span class="sp-meta"><span class="key-points">4 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-7-5">
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.5(i)</span> Boiling Temperatures of Alkanes with Increasing Chain Length</h4>
+        <ul class="point-list obs">
+          <li><strong>Trend:</strong> Boiling temperatures of unbranched alkanes increase steadily as carbon chain length increases.</li>
+          <li><strong>Explanation:</strong> As chain length grows, relative molecular mass and the total number of electrons per molecule increase. Larger electron clouds undergo greater fluctuations in electron density, generating stronger instantaneous and induced dipoles. Furthermore, longer straight chains offer a larger surface area of contact between molecules, increasing total London dispersion forces and requiring more energy to separate molecules.</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.5(ii)</span> Effect of Branching on Alkane Boiling Temperatures</h4>
+        <ul class="point-list obs">
+          <li><strong>Trend:</strong> Branched-chain alkanes have lower boiling temperatures than their unbranched structural isomers.</li>
+          <li><strong>Explanation:</strong> Branching makes molecules more compact and spherical, which reduces the surface area of contact between adjacent molecules. Fewer points of contact weaken the overall London dispersion forces, requiring less thermal energy to overcome. For example, pentane boils at 309 K, 2-methylbutane at 301 K, and 2,2-dimethylpropane at 283 K.</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.5(iii)</span> Low Volatility (Higher Boiling Points) of Alcohols Compared to Alkanes</h4>
+        <ul class="point-list obs">
+          <li><strong>Trend:</strong> Alcohols have significantly higher boiling points (lower volatility) than alkanes with similar electron numbers or chain lengths.</li>
+          <li><strong>Explanation:</strong> Alkanes are non-polar and held together solely by weak London dispersion forces. Alcohols contain the polar –OH group, allowing them to form strong intermolecular hydrogen bonds in addition to London forces. Breaking these extra hydrogen bonds requires substantially higher thermal energy. For instance, propane boils at −42°C while propan-1-ol boils at 97°C.</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.5(iv)</span> Trends in Boiling Temperatures of Hydrogen Halides (HF to HI)</h4>
+        <ol class="num-list">
+          <li><strong>Observation:</strong> HF has an anomalously high boiling point (293 K). From HCl to HI, boiling points drop sharply to HCl (188 K) and then rise steadily through HBr (207 K) to HI (238 K).</li>
+          <li><strong>Explanation:</strong>
+            <ul class="inner-list">
+              <li><strong>HF Anomaly:</strong> HF forms strong intermolecular hydrogen bonds due to the extreme polarity of the H–F bond and small, intense lone pairs on fluorine.</li>
+              <li><strong>HCl to HI Trend:</strong> HCl, HBr, and HI cannot form hydrogen bonds; they experience permanent dipole–dipole forces and London forces. Going from HCl to HI, electronegativity decreases, so permanent dipole forces weaken. However, the number of electrons increases significantly (HCl &lt; HBr &lt; HI), strengthening the London dispersion forces enough to overcome the drop in permanent dipole attractions and increase the boiling point.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-7-6">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-7-6">
+        <span class="sp-title"><span class="sp-num">7.6</span> Factors Influencing Solvent Choice</span>
+        <span class="sp-meta"><span class="key-points">4 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-7-6">
+      <p>Dissolution depends on the balance of intermolecular interactions: a solute dissolves when the solute–solvent attractions are strong enough to overcome both solute–solute and solvent–solvent forces ("like dissolves like").</p>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.6(i)</span> Water as a Solvent for Ionic Compounds</h4>
+        <ul class="point-list">
+          <li><strong>Mechanism:</strong> Giant ionic lattices are held together by strong electrostatic ionic bonds.</li>
+          <li><strong>Hydration:</strong> Water is a polar solvent (δ<sup>+</sup> H, δ<sup>−</sup> O). When an ionic solid is placed in water, the δ<sup>+</sup> hydrogen atoms attract negative anions, while δ<sup>−</sup> oxygen atoms attract positive cations.</li>
+          <li><strong>Energetics:</strong> The energy released during ion hydration (<em>hydration enthalpy</em>) supplies the energy needed to break apart the ionic lattice (<em>lattice enthalpy</em>).</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.6(ii)</span> Water as a Solvent for Simple Alcohols</h4>
+        <ul class="point-list">
+          <li><strong>Mechanism:</strong> Small alcohols (methanol, ethanol, propan-1-ol) are completely soluble in water because their hydroxyl (–OH) groups form hydrogen bonds with water molecules.</li>
+          <li><strong>Chain Length Effect:</strong> As the non-polar hydrocarbon chain lengthens (e.g., hexanol, octanol), solubility in water decreases markedly. The non-polar alkyl chain cannot form hydrogen bonds with water and disrupts water's hydrogen-bonded network; hydrophobic London forces between long alkyl chains become predominant.</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.6(iii)</span> Water as a Poor Solvent for Halogenoalkanes and Non-Polar Compounds</h4>
+        <ul class="point-list">
+          <li><strong>Explanation:</strong> Halogenoalkanes contain polar C–X bonds but lack H–F, H–O, or H–N bonds, meaning they cannot form hydrogen bonds with water.</li>
+          <li><strong>Energetics:</strong> The permanent dipole–dipole forces formed between halogenoalkanes and water are too weak to break the strong hydrogen bonds between water molecules, rendering halogenoalkanes insoluble or only sparingly soluble in water.</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4><span class="tag tag-teal">7.6(iv)</span> Non-Aqueous Solvents for Non-Polar Compounds</h4>
+        <ul class="point-list">
+          <li><strong>Explanation:</strong> Non-polar solutes (such as alkanes or iodine) readily dissolve in non-polar organic solvents (such as hexane or cyclohexane).</li>
+          <li><strong>Interactions:</strong> The weak London forces broken between solute molecules and between solvent molecules are replaced by London forces of comparable strength between solute and solvent molecules.</li>
+        </ul>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+  </article>
+
+  <!-- ================= TOPIC 8 ================= -->
+  <article class="topic" id="topic8">
+    <div class="topic-banner amber">
+      <h2>Topic 8: Redox Chemistry and Groups 1, 2, and 7</h2>
+      <p>This comprehensive guide covers every specification point in Topic 8 for Edexcel IAL Chemistry Unit 2, broken down into 8A (Redox Chemistry), 8B (Groups 1 and 2), and 8C (Group 7), including all equations, colors, observations, and exam-assessed practical details.</p>
+    </div>
+
+    <nav class="topic-overview amber" aria-label="Topic 8 roadmap">
+      <h6><span class="ov-icon" aria-hidden="true">🗺️</span> How to work through Topic 8 — three parts, click any step to jump there</h6>
+      <div class="ov-part"><b>Part 8A · Redox Chemistry</b>
+        <ol class="ov-steps">
+          <li><a href="#sp-8-1"><b>8.1</b><i>Oxidation-number rules</i></a></li>
+          <li><a href="#sp-8-3"><b>8.3</b><i>Stock notation</i></a></li>
+          <li><a href="#sp-8-5"><b>8.5</b><i>OIL RIG &amp; agents</i></a></li>
+          <li><a href="#sp-8-7"><b>8.7</b><i>Disproportionation</i></a></li>
+          <li><a href="#sp-8-10"><b>8.10</b><i>Half-equations</i></a></li>
+        </ol>
+      </div>
+      <div class="ov-part"><b>Part 8B · Groups 1 &amp; 2</b>
+        <ol class="ov-steps">
+          <li><a href="#sp-8-11"><b>8.11</b><i>Ionisation energy</i></a></li>
+          <li><a href="#sp-8-12"><b>8.12</b><i>Reactivity trend</i></a></li>
+          <li><a href="#sp-8-13"><b>8.13</b><i>Reactions: O₂, Cl₂, H₂O</i></a></li>
+          <li><a href="#sp-8-14"><b>8.14</b><i>Oxides &amp; hydroxides</i></a></li>
+          <li><a href="#sp-8-15"><b>8.15</b><i>Solubility trends</i></a></li>
+          <li><a href="#sp-8-16"><b>8.16</b><i>Thermal stability</i></a></li>
+          <li><a href="#sp-8-17"><b>8.17</b><i>Flame tests</i></a></li>
+          <li><a href="#sp-8-18"><b>8.18</b><i>Anion &amp; cation tests</i></a></li>
+        </ol>
+      </div>
+      <div class="ov-part"><b>Part 8C · Group 7 (Halogens)</b>
+        <ol class="ov-steps">
+          <li><a href="#sp-8-24"><b>8.24</b><i>Group 7 trends</i></a></li>
+          <li><a href="#sp-8-25"><b>8.25</b><i>Displacement</i></a></li>
+          <li><a href="#sp-8-26"><b>8.26</b><i>Chlorine + alkali</i></a></li>
+          <li><a href="#sp-8-27a"><b>8.27(i)</b><i>Conc. H₂SO₄ &amp; halides</i></a></li>
+          <li><a href="#sp-8-27b"><b>8.27(ii)</b><i>AgNO₃ test tree</i></a></li>
+          <li><a href="#sp-8-27c"><b>8.27(iii)</b><i>Hydrogen halides</i></a></li>
+          <li><a href="#sp-8-28"><b>8.28</b><i>F &amp; At predictions</i></a></li>
+        </ol>
+      </div>
+      <div class="mnemonic">
+        <span class="mn-label">Memory hooks</span>
+        <span class="mn-chip"><b>OIL</b> RIG</span>
+        <span class="mn-chip"><b>C</b>hlorine: <b>C</b>old → chlorate(<b>I</b>)</span>
+        <em><b>O</b>xidation <b>I</b>s <b>L</b>oss, <b>R</b>eduction <b>I</b>s <b>G</b>ain — and “<b>C</b>old gives chlorate(<b>I</b>), <b>H</b>ot gives chlorate(<b>V</b>)”.</em>
+      </div>
+    </nav>
+
+    <div class="part-divider amber" id="part-8a"><h3>Part 8A: Redox Chemistry</h3></div>
+
+    <section class="sp" id="sp-8-1">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-1">
+        <span class="sp-title"><span class="sp-num">8.1</span> Oxidation Numbers and Rules</span>
+        <span class="sp-meta"><span class="key-points">6 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-1">
+      <p>An oxidation number (or oxidation state) represents the formal charge an atom would have if all bonds in a compound were purely ionic.</p>
+
+      <h5 class="mini-head">Rules for Assigning Oxidation Numbers:</h5>
+      <ol class="rule-list">
+        <li><strong>Uncombined Elements:</strong> Any element in its uncombined elemental state has an oxidation number of 0 (e.g. H<sub>2</sub>, O<sub>2</sub>, Fe, S<sub>8</sub> = 0).</li>
+        <li><strong>Simple Monatomic Ions:</strong> Equal to the charge on the ion (e.g. Na<sup>+</sup> = +1, Mg<sup>2+</sup> = +2, Fe<sup>3+</sup> = +3, Cl<sup>−</sup> = −1).</li>
+        <li><strong>Group 1, 2, and 3 Metals in Compounds:</strong> Always +1, +2, and +3 respectively.</li>
+        <li><strong>Fluorine in Compounds:</strong> Always −1 (most electronegative element).</li>
+        <li><strong>Hydrogen in Compounds:</strong> Always +1, except in metal hydrides (e.g. NaH, CaH<sub>2</sub>) where hydrogen exists as a hydride ion (H<sup>−</sup>) with an oxidation number of −1.</li>
+        <li><strong>Oxygen in Compounds:</strong> Always −2, with three notable exceptions:
+          <ul class="inner-list">
+            <li><strong>Peroxides</strong> (e.g. H<sub>2</sub>O<sub>2</sub>, Na<sub>2</sub>O<sub>2</sub>): Oxygen is −1.</li>
+            <li><strong>Superoxides</strong> (e.g. KO<sub>2</sub>): Oxygen is −½.</li>
+            <li><strong>Compounds with Fluorine</strong> (e.g. F<sub>2</sub>O where O = +2, and O<sub>2</sub>F<sub>2</sub> where O = +1).</li>
+          </ul>
+        </li>
+        <li><strong>Neutral Molecules:</strong> The sum of oxidation numbers of all atoms in a neutral molecule equals 0.</li>
+        <li><strong>Polyatomic Ions:</strong> The sum of oxidation numbers equals the overall charge on the ion (e.g. in SO<sub>4</sub><sup>2−</sup>, S = +6 and 4 × (−2) = −8, sum = −2).</li>
+      </ol>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-3">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-3">
+        <span class="sp-title"><span class="sp-num">8.3</span> Stock Notation and Chemical Formulae</span>
+        <span class="sp-meta"><span class="key-points">1 key point</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-3">
+      <ul class="point-list">
+        <li><strong>Stock Notation:</strong> Roman numerals in parentheses indicate the positive oxidation state of an element that exhibits variable oxidation numbers.</li>
+      </ul>
+      <div class="stock-grid">
+        <div class="stock-card"><span class="stock-formula">FeCl<sub>2</sub></span><span class="stock-name">Iron(II) chloride</span><span class="stock-vs">vs</span><span class="stock-formula">FeCl<sub>3</sub></span><span class="stock-name">Iron(III) chloride</span></div>
+        <div class="stock-card"><span class="stock-formula">K<sub>2</sub>SO<sub>3</sub></span><span class="stock-name">Potassium sulfate(IV)</span><span class="stock-vs">vs</span><span class="stock-formula">K<sub>2</sub>SO<sub>4</sub></span><span class="stock-name">Potassium sulfate(VI)</span></div>
+        <div class="stock-card"><span class="stock-formula">NaClO</span><span class="stock-name">Sodium chlorate(I)</span><span class="stock-vs">vs</span><span class="stock-formula">NaClO<sub>3</sub></span><span class="stock-name">Sodium chlorate(V)</span></div>
+        <div class="stock-card"><span class="stock-formula">NaNO<sub>2</sub></span><span class="stock-name">Sodium nitrate(III)</span><span class="stock-vs">vs</span><span class="stock-formula">NaNO<sub>3</sub></span><span class="stock-name">Sodium nitrate(V)</span></div>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-5">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-5, 8-6">
+        <span class="sp-title"><span class="sp-num">8.5–8.9</span> Oxidation, Reduction, and Redox Agents</span>
+        <span class="sp-meta"><span class="key-points">2 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-5, 8-6">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Process</th><th>Electron Transfer</th><th>Oxidation Number Change</th><th>Oxygen / Hydrogen</th><th>Behavior of Elements</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong class="proc oxid">Oxidation</strong></td>
+              <td>Loss of electrons (OIL)</td>
+              <td>Increase in oxidation number</td>
+              <td>Gain of Oxygen / Loss of Hydrogen</td>
+              <td>Metals (s-block) lose electrons to form positive cations</td>
+            </tr>
+            <tr>
+              <td><strong class="proc redu">Reduction</strong></td>
+              <td>Gain of electrons (RIG)</td>
+              <td>Decrease in oxidation number</td>
+              <td>Loss of Oxygen / Gain of Hydrogen</td>
+              <td>Non-metals (p-block) gain electrons to form negative anions</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="point-list agents">
+        <li><strong>Oxidising Agent:</strong> A species that gains electrons (is reduced) and causes another species to be oxidised. Its oxidation number decreases.</li>
+        <li><strong>Reducing Agent:</strong> A species that donates electrons (is oxidised) and causes another species to be reduced. Its oxidation number increases.</li>
+      </ul>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-7">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-7">
+        <span class="sp-title"><span class="sp-num">8.7</span> Disproportionation Reactions</span>
+        <span class="sp-meta"><span class="key-points">2 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-7">
+      <p>A disproportionation reaction is a specific redox reaction where an element in a single species is simultaneously oxidised and reduced.</p>
+      <h5 class="mini-head">Key Examples:</h5>
+      <div class="example-block">
+        <h6><span class="ex-num">1</span> Chlorine in Water:</h6>
+        <div class="eqn">Cl<sub>2</sub>(aq) + H<sub>2</sub>O(l) ⇌ HCl(aq) + HClO(aq)</div>
+        <p>Chlorine's oxidation state changes from 0 in Cl<sub>2</sub> to −1 in HCl (reduction) and +1 in HClO (oxidation).</p>
+      </div>
+      <div class="example-block">
+        <h6><span class="ex-num">2</span> Decomposition of Hydrogen Peroxide:</h6>
+        <div class="eqn">2H<sub>2</sub>O<sub>2</sub>(aq) → 2H<sub>2</sub>O(l) + O<sub>2</sub>(g)</div>
+        <p>Oxygen changes from −1 in H<sub>2</sub>O<sub>2</sub> to −2 in H<sub>2</sub>O (reduction) and 0 in O<sub>2</sub> (oxidation).</p>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-10">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-10">
+        <span class="sp-title"><span class="sp-num">8.10</span> Ionic Half-Equations and Full Equations</span>
+        <span class="sp-meta"><span class="key-points">1 key point</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-10">
+      <p>Half-equations display explicit electron transfers for individual oxidation and reduction processes.</p>
+      <h5 class="mini-head">Constructing Half-Equations in Acidic Conditions:</h5>
+      <ol class="step-list">
+        <li>Balance atoms being oxidised/reduced</li>
+        <li>Add H<sub>2</sub>O to balance oxygen atoms</li>
+        <li>Add H<sup>+</sup> ions to balance hydrogen atoms</li>
+        <li>Add e<sup>−</sup> to balance overall electrical charges</li>
+      </ol>
+      <h5 class="mini-head">Example: Combining Fe<sup>2+</sup> oxidation and Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> reduction:</h5>
+      <div class="example-block">
+        <ul class="point-list">
+          <li><strong>Oxidation:</strong> <span class="inline-eqn">Fe<sup>2+</sup> → Fe<sup>3+</sup> + e<sup>−</sup></span> (multiply by 6)</li>
+          <li><strong>Reduction:</strong> <span class="inline-eqn">Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 14H<sup>+</sup> + 6e<sup>−</sup> → 2Cr<sup>3+</sup> + 7H<sub>2</sub>O</span></li>
+          <li><strong>Overall Equation:</strong></li>
+        </ul>
+        <div class="eqn highlight-eqn">6Fe<sup>2+</sup> + Cr<sub>2</sub>O<sub>7</sub><sup>2−</sup> + 14H<sup>+</sup> → 6Fe<sup>3+</sup> + 2Cr<sup>3+</sup> + 7H<sub>2</sub>O</div>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <div class="part-divider amber" id="part-8b"><h3>Part 8B: The Elements of Groups 1 and 2</h3></div>
+
+    <section class="sp" id="sp-8-11">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-11">
+        <span class="sp-title"><span class="sp-num">8.11</span> Trend in Ionisation Energy</span>
+        <span class="sp-meta"><span class="key-points">2 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-11">
+      <ul class="point-list trend">
+        <li><strong>Trend:</strong> First and second ionisation energies decrease down Groups 1 and 2.</li>
+        <li><strong>Explanation:</strong>
+          <ol class="inner-list num">
+            <li>Atomic radius increases down the group.</li>
+            <li>The number of inner filled electron shells increases, leading to increased shielding.</li>
+            <li>Increased distance and shielding outweigh the increase in nuclear charge, weakening the electrostatic attraction between the nucleus and outermost valence electron(s).</li>
+          </ol>
+        </li>
+      </ul>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-12">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-12">
+        <span class="sp-title"><span class="sp-num">8.12</span> Trend in Reactivity</span>
+        <span class="sp-meta"><span class="key-points">2 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-12">
+      <ul class="point-list trend">
+        <li><strong>Trend:</strong> Chemical reactivity increases down Groups 1 and 2.</li>
+        <li><strong>Explanation:</strong> Groups 1 and 2 metals react by losing outer valence electrons to form positive ions (M<sup>+</sup> or M<sup>2+</sup>). Because ionisation energies decrease down the group, less energy is required to remove valence electrons, facilitating faster and more vigorous reactions.</li>
+      </ul>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-13">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-13">
+        <span class="sp-title"><span class="sp-num">8.13</span> Reactions with Oxygen, Chlorine, and Water</span>
+        <span class="sp-meta"><span class="key-points">3 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-13">
+
+      <div class="sub-block">
+        <h4>1. Reaction with Oxygen (O<sub>2</sub>)</h4>
+        <ul class="point-list">
+          <li><strong>Group 1:</strong> <span class="inline-eqn">4M(s) + O<sub>2</sub>(g) → 2M<sub>2</sub>O(s)</span> (White basic solid oxides)</li>
+          <li><strong>Group 2:</strong> <span class="inline-eqn">2M(s) + O<sub>2</sub>(g) → 2MO(s)</span> (White basic solid oxides)</li>
+          <li><strong>Special Notes:</strong>
+            <ul class="inner-list">
+              <li>Lithium forms simple oxide Li<sub>2</sub>O; Sodium forms peroxide Na<sub>2</sub>O<sub>2</sub>; Potassium forms superoxide KO<sub>2</sub>.</li>
+              <li>Group 2 metals burn with vivid flame colors (e.g. Mg burns with a blinding bright white flame to form MgO).</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4>2. Reaction with Chlorine (Cl<sub>2</sub>)</h4>
+        <ul class="point-list">
+          <li><strong>Group 1:</strong> <span class="inline-eqn">2M(s) + Cl<sub>2</sub>(g) → 2MCl(s)</span> (White ionic chlorides)</li>
+          <li><strong>Group 2:</strong> <span class="inline-eqn">M(s) + Cl<sub>2</sub>(g) → MCl<sub>2</sub>(s)</span> (White ionic chlorides)</li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4>3. Reaction with Water (H<sub>2</sub>O)</h4>
+        <ul class="point-list">
+          <li><strong>Group 1:</strong> <span class="inline-eqn">2M(s) + 2H<sub>2</sub>O(l) → 2MOH(aq) + H<sub>2</sub>(g)</span></li>
+          <li><strong>Observations:</strong> Effervescence, metal melts into a sphere (Na, K), floats, moves rapidly across surface, disappears; solution turns alkaline. Potassium catches fire with a lilac flame.</li>
+          <li><strong>Group 2:</strong> <span class="inline-eqn">M(s) + 2H<sub>2</sub>O(l) → M(OH)<sub>2</sub>(aq/s) + H<sub>2</sub>(g)</span></li>
+          <li><strong>Magnesium anomaly with Water vs Steam:</strong>
+            <ul class="inner-list">
+              <li>With cold water, Mg reacts extremely slowly: <span class="inline-eqn">Mg(s) + 2H<sub>2</sub>O(l) → Mg(OH)<sub>2</sub>(s) + H<sub>2</sub>(g)</span></li>
+              <li>With steam (H<sub>2</sub>O(g)), Mg reacts vigorously, burning with a bright white flame to form solid Magnesium Oxide: <span class="inline-eqn">Mg(s) + H<sub>2</sub>O(g) → MgO(s) + H<sub>2</sub>(g)</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-14">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-14">
+        <span class="sp-title"><span class="sp-num">8.14</span> Reactions of Oxides and Hydroxides</span>
+        <span class="sp-meta"><span class="key-points">2 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-14">
+
+      <div class="sub-block">
+        <h4>1. Reaction of Oxides with Water</h4>
+        <ul class="point-list">
+          <li><strong>Group 1:</strong> <span class="inline-eqn">M<sub>2</sub>O(s) + H<sub>2</sub>O(l) → 2MOH(aq)</span></li>
+          <li><strong>Group 2:</strong> <span class="inline-eqn">MO(s) + H<sub>2</sub>O(l) → M(OH)<sub>2</sub>(aq)</span></li>
+          <li><strong>Ionic Equation:</strong> <span class="inline-eqn">O<sup>2−</sup>(s) + H<sub>2</sub>O(l) → 2OH<sup>−</sup>(aq)</span></li>
+        </ul>
+      </div>
+
+      <div class="sub-block">
+        <h4>2. Neutralisation Reactions with Dilute Acids</h4>
+        <ul class="point-list">
+          <li><strong>Oxides:</strong> <span class="inline-eqn">MO(s) + 2HCl(aq) → MCl<sub>2</sub>(aq) + H<sub>2</sub>O(l)</span></li>
+          <li><strong>Hydroxides:</strong> <span class="inline-eqn">M(OH)<sub>2</sub>(s) + 2HCl(aq) → MCl<sub>2</sub>(aq) + 2H<sub>2</sub>O(l)</span></li>
+        </ul>
+        <div class="callout warn">
+          <strong>Crucial Exam Note on H<sub>2</sub>SO<sub>4</sub>:</strong> Reacting Ca(OH)<sub>2</sub>, Sr(OH)<sub>2</sub>, or Ba(OH)<sub>2</sub> with dilute H<sub>2</sub>SO<sub>4</sub> forms an insoluble sulfate layer (BaSO<sub>4</sub>) over the solid, preventing further reaction.
+        </div>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-15">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-15">
+        <span class="sp-title"><span class="sp-num">8.15</span> Trends in Solubility of Group 2 Hydroxides and Sulfates</span>
+        <span class="sp-meta"><span class="key-points">2 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-15">
+      <div class="sol-diagram" role="img" aria-label="Solubility trends down Group 2">
+        <div class="sol-col">
+          <h6>Group 2 Hydroxides [M(OH)<sub>2</sub>]</h6>
+          <div class="sol-item top">Mg(OH)<sub>2</sub> (Insoluble)</div>
+          <div class="sol-arrow up">Solubility INCREASES ▼</div>
+          <div class="sol-item bottom">Ba(OH)<sub>2</sub> (Soluble)</div>
+        </div>
+        <div class="sol-col">
+          <h6>Group 2 Sulfates [MSO<sub>4</sub>]</h6>
+          <div class="sol-item top">MgSO<sub>4</sub> (Soluble)</div>
+          <div class="sol-arrow down">Solubility DECREASES ▼</div>
+          <div class="sol-item bottom">BaSO<sub>4</sub> (Insoluble White Ppt)</div>
+        </div>
+      </div>
+      <ul class="point-list trend">
+        <li><strong>Hydroxide Solubility:</strong> Increases down Group 2 (Mg(OH)<sub>2</sub> insoluble; Ca(OH)<sub>2</sub> sparingly soluble; Ba(OH)<sub>2</sub> very soluble). As solubility increases, OH<sup>−</sup> concentration increases, making solutions more alkaline down the group.</li>
+        <li><strong>Sulfate Solubility:</strong> Decreases down Group 2 (MgSO<sub>4</sub> soluble; BaSO<sub>4</sub> completely insoluble white precipitate).</li>
+      </ul>
+      <div class="callout tip">
+        <strong>Exam Tip:</strong> All Group 1 hydroxides and sulfates are completely soluble in water.
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-16">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-16">
+        <span class="sp-title"><span class="sp-num">8.16</span> Thermal Stability of Nitrates and Carbonates</span>
+        <span class="sp-meta"><span class="key-points">4 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-16">
+      <ul class="point-list trend">
+        <li><strong>Definition:</strong> Thermal stability measures a compound's resistance to decomposition upon heating.</li>
+        <li><strong>Trend:</strong> Thermal stability of Group 1 and 2 nitrates and carbonates increases down the group.</li>
+      </ul>
+
+      <h5 class="mini-head">Mechanism (Polarising Power of Cation):</h5>
+      <ol class="num-list">
+        <li>Down the group, cation charge remains +1 or +2, but cation ionic radius increases.</li>
+        <li>Charge density of the cation decreases down the group.</li>
+        <li>Smaller cations with high charge density (e.g. Li<sup>+</sup>, Mg<sup>2+</sup>) exert a strong polarising power on large complex anions (CO<sub>3</sub><sup>2−</sup> or NO<sub>3</sub><sup>−</sup>), distorting their electron cloud.</li>
+        <li>This weakens the internal covalent C–O or N–O bonds within the anion, lowering the thermal energy required to decompose the salt.</li>
+      </ol>
+
+      <div class="flow-strip">
+        <span>Small Cation (High Charge Density)</span><i>──▶</i>
+        <span>Polarises Anion Electron Cloud</span><i>──▶</i>
+        <span>Weakens C-O/N-O Bond</span><i>──▶</i>
+        <span class="flow-end">Low Thermal Stability</span>
+      </div>
+
+      <h5 class="mini-head">Thermal Decomposition Patterns:</h5>
+      <div class="decomp-grid">
+        <div class="decomp-card"><h6>Group 2 Nitrates &amp; LiNO<sub>3</sub></h6><div class="eqn">2M(NO<sub>3</sub>)<sub>2</sub> ──▶ 2MO + 4NO<sub>2</sub> (Brown Fumes) + O<sub>2</sub></div></div>
+        <div class="decomp-card"><h6>Group 1 Nitrates (Na to Cs)</h6><div class="eqn">2MNO<sub>3</sub> ──▶ 2MNO<sub>2</sub> + O<sub>2</sub> (No Brown Fumes)</div></div>
+        <div class="decomp-card"><h6>Group 2 Carbonates &amp; Li<sub>2</sub>CO<sub>3</sub></h6><div class="eqn">MCO<sub>3</sub> ──▶ MO + CO<sub>2</sub></div></div>
+        <div class="decomp-card"><h6>Group 1 Carbonates (Na to Cs)</h6><div class="eqn">Thermally stable at Bunsen temperatures (No Decomposition)</div></div>
+      </div>
+
+      <ol class="num-list">
+        <li><strong>Group 2 Nitrates:</strong> All decompose on heating to form metal oxide, brown toxic NO<sub>2</sub> gas, and O<sub>2</sub> gas:
+          <div class="eqn">2M(NO<sub>3</sub>)<sub>2</sub>(s) <span class="delta">Δ</span>→ 2MO(s) + 4NO<sub>2</sub>(g) + O<sub>2</sub>(g)</div>
+        </li>
+        <li><strong>Group 1 Nitrates:</strong> Lesser decomposition for Na to Cs (forms metal nitrite and O<sub>2</sub>; no brown fumes):
+          <div class="eqn">2MNO<sub>3</sub>(s) <span class="delta">Δ</span>→ 2MNO<sub>2</sub>(s) + O<sub>2</sub>(g)</div>
+          <div class="callout warn"><strong>Lithium Anomaly:</strong> Li<sup>+</sup> is small enough to polarise NO<sub>3</sub><sup>−</sup>, so LiNO<sub>3</sub> decomposes like a Group 2 nitrate:
+          <div class="eqn">4LiNO<sub>3</sub>(s) <span class="delta">Δ</span>→ 2Li<sub>2</sub>O(s) + 4NO<sub>2</sub>(g) + O<sub>2</sub>(g)</div></div>
+        </li>
+        <li><strong>Group 2 Carbonates:</strong> All decompose on heating to metal oxide and CO<sub>2</sub> gas:
+          <div class="eqn">MCO<sub>3</sub>(s) <span class="delta">Δ</span>→ MO(s) + CO<sub>2</sub>(g)</div>
+        </li>
+        <li><strong>Group 1 Carbonates:</strong> Thermally stable at Bunsen temperatures (do not decompose), except Li<sub>2</sub>CO<sub>3</sub>:
+          <div class="eqn">Li<sub>2</sub>CO<sub>3</sub>(s) <span class="delta">Δ</span>→ Li<sub>2</sub>O(s) + CO<sub>2</sub>(g)</div>
+        </li>
+      </ol>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-17">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-17">
+        <span class="sp-title"><span class="sp-num">8.17</span> Flame Tests and Colors</span>
+        <span class="sp-meta"><span class="key-points">1 key point</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-17">
+      <ul class="point-list">
+        <li><strong>Mechanism:</strong> Heat energy from the flame promotes electrons from ground state to higher quantum energy levels (excited state). As electrons drop back to lower levels, energy is emitted as visible light of specific wavelength (ΔE = hf).</li>
+      </ul>
+      <div class="table-wrap">
+        <table class="flame-table">
+          <thead>
+            <tr><th>Cation</th><th>Flame Color</th><th>Cation</th><th>Flame Color</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Li<sup>+</sup></td><td><span class="swatch sw-li"></span>Red / Crimson</td><td>Be<sup>2+</sup></td><td>No color (energy gap outside visible spectrum)</td></tr>
+            <tr><td>Na<sup>+</sup></td><td><span class="swatch sw-na"></span>Yellow / Orange</td><td>Mg<sup>2+</sup></td><td>No color (energy gap outside visible spectrum)</td></tr>
+            <tr><td>K<sup>+</sup></td><td><span class="swatch sw-k"></span>Lilac</td><td>Ca<sup>2+</sup></td><td><span class="swatch sw-ca"></span>Brick red</td></tr>
+            <tr><td>Rb<sup>+</sup></td><td><span class="swatch sw-rb"></span>Red / Purple</td><td>Sr<sup>2+</sup></td><td><span class="swatch sw-sr"></span>Crimson red</td></tr>
+            <tr><td>Cs<sup>+</sup></td><td><span class="swatch sw-cs"></span>Blue / Violet</td><td>Ba<sup>2+</sup></td><td><span class="swatch sw-ba"></span>Apple green</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h5 class="mini-head">Flame Test Procedure:</h5>
+      <ol class="step-list">
+        <li>Dip a clean platinum or nichrome wire into concentrated HCl.</li>
+        <li>Heat wire in a non-luminous Bunsen flame to clean it until no color is imparted. (Conc. HCl converts compounds into volatile chloride salts).</li>
+        <li>Dip wire in conc. HCl, pick up sample, place in flame, and observe color.</li>
+      </ol>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-18">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-18-i">
+        <span class="sp-title"><span class="sp-num">8.18(i)</span> Qualitative Tests for Anions &amp; Cations</span>
+        <span class="sp-meta"><span class="key-points">3 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-18-i">
+
+      <div class="test-block">
+        <h4><span class="ex-num">1</span> Carbonate (CO<sub>3</sub><sup>2−</sup>) and Hydrogencarbonate (HCO<sub>3</sub><sup>−</sup>)</h4>
+        <ul class="point-list">
+          <li>Add dilute acid (HCl or HNO<sub>3</sub>). Effervescence produced.</li>
+          <li>Bubble gas through limewater (Ca(OH)<sub>2</sub>); turns milky due to white precipitate of CaCO<sub>3</sub>.</li>
+          <li><span class="inline-eqn">CO<sub>3</sub><sup>2−</sup>(aq) + 2H<sup>+</sup>(aq) → CO<sub>2</sub>(g) + H<sub>2</sub>O(l)</span></li>
+        </ul>
+      </div>
+
+      <div class="test-block">
+        <h4><span class="ex-num">2</span> Sulfate (SO<sub>4</sub><sup>2−</sup>)</h4>
+        <ul class="point-list">
+          <li>Add dilute HCl or HNO<sub>3</sub> (to destroy any CO<sub>3</sub><sup>2−</sup> ions that would form false precipitates), then add aqueous BaCl<sub>2</sub> or Ba(NO<sub>3</sub>)<sub>2</sub>.</li>
+          <li>Formation of an insoluble white precipitate of BaSO<sub>4</sub>.</li>
+          <li><span class="inline-eqn">Ba<sup>2+</sup>(aq) + SO<sub>4</sub><sup>2−</sup>(aq) → BaSO<sub>4</sub>(s)</span></li>
+        </ul>
+      </div>
+
+      <div class="test-block">
+        <h4><span class="ex-num">3</span> Ammonium (NH<sub>4</sub><sup>+</sup>)</h4>
+        <ul class="point-list">
+          <li>Add aqueous NaOH and warm gently.</li>
+          <li>Pungent ammonia gas (NH<sub>3</sub>) turns damp red litmus paper blue, or forms dense white fumes of NH<sub>4</sub>Cl when tested with glass rod dipped in conc. HCl.</li>
+          <li><span class="inline-eqn">NH<sub>4</sub><sup>+</sup>(aq) + OH<sup>−</sup>(aq) → NH<sub>3</sub>(g) + H<sub>2</sub>O(l)</span></li>
+        </ul>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <div class="part-divider amber" id="part-8c"><h3>Part 8C: Inorganic Chemistry of Group 7 (Halogens)</h3></div>
+
+    <section class="sp" id="sp-8-24">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-24">
+        <span class="sp-title"><span class="sp-num">8.24</span> Trends in Group 7 Elements</span>
+        <span class="sp-meta"><span class="key-points">3 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-24">
+      <div class="table-wrap">
+        <table class="halogen-table">
+          <thead>
+            <tr><th>Halogen</th><th>Formula</th><th>Physical State at RTP</th><th>Color (Standard)</th><th>Color in Water</th><th>Color in Cyclohexane (Organic)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="dot dot-f"></span>Fluorine</td><td>F<sub>2</sub></td><td>Gas</td><td>Pale Yellow</td><td>Reacts violently</td><td>Reacts violently</td></tr>
+            <tr><td><span class="dot dot-cl"></span>Chlorine</td><td>Cl<sub>2</sub></td><td>Gas</td><td>Yellow-Green</td><td>Pale Green</td><td>Pale Green</td></tr>
+            <tr><td><span class="dot dot-br"></span>Bromine</td><td>Br<sub>2</sub></td><td>Liquid</td><td>Red-Brown</td><td>Orange / Yellow</td><td>Orange / Red</td></tr>
+            <tr><td><span class="dot dot-i"></span>Iodine</td><td>I<sub>2</sub></td><td>Solid</td><td>Dark Grey / Black</td><td>Brown</td><td>Violet / Purple</td></tr>
+            <tr><td><span class="dot dot-at"></span>Astatine</td><td>At<sub>2</sub></td><td>Solid</td><td>Black</td><td>—</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h5 class="mini-head">Explanations of Periodic Trends:</h5>
+      <ol class="num-list">
+        <li><strong>Melting &amp; Boiling Points (Increase Down Group):</strong> Halogens exist as non-polar diatomic molecules held by London dispersion forces. As molecular size and total electron count increase (F<sub>2</sub>: 18e<sup>−</sup> → I<sub>2</sub>: 106e<sup>−</sup>), electron cloud fluctuations increase, strengthening London forces and requiring higher thermal energy to separate molecules.</li>
+        <li><strong>Electronegativity (Decreases Down Group):</strong> Atomic radius and inner electron shielding increase down the group, weakening the electrostatic pull of the nucleus on shared bonding electrons.</li>
+        <li><strong>Reactivity &amp; Oxidising Power (Decreases Down Group):</strong> Halogens react by gaining an electron to form 1<sup>−</sup> halide ions (X<sub>2</sub> + 2e<sup>−</sup> → 2X<sup>−</sup>). Down the group, outer shells are further from the nucleus with greater shielding, making it harder to attract an incoming electron.</li>
+      </ol>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-25">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-25">
+        <span class="sp-title"><span class="sp-num">8.25</span> Halogen Displacement Reactions</span>
+        <span class="sp-meta"><span class="key-points">1 key point</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-25">
+      <p>A more reactive halogen displaces a less reactive halide ion from aqueous solution:</p>
+      <ul class="point-list">
+        <li><span class="inline-eqn">Cl<sub>2</sub>(aq) + 2Br<sup>−</sup>(aq) → 2Cl<sup>−</sup>(aq) + Br<sub>2</sub>(aq)</span> (Solution turns yellow/orange)</li>
+        <li><span class="inline-eqn">Cl<sub>2</sub>(aq) + 2I<sup>−</sup>(aq) → 2Cl<sup>−</sup>(aq) + I<sub>2</sub>(aq)</span> (Solution turns brown)</li>
+        <li><span class="inline-eqn">Br<sub>2</sub>(aq) + 2I<sup>−</sup>(aq) → 2Br<sup>−</sup>(aq) + I<sub>2</sub>(aq)</span> (Solution turns brown)</li>
+      </ul>
+      <div class="sub-block">
+        <h4>Adding Cyclohexane (Organic Layer)</h4>
+        <ul class="point-list">
+          <li>Halogens are non-polar and much more soluble in cyclohexane than in water. Adding cyclohexane and shaking separates the mixture into two layers: top organic layer shows distinct colors (<strong>Orange for Br<sub>2</sub></strong>, <strong>Purple/Violet for I<sub>2</sub></strong>).</li>
+        </ul>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-26">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-26">
+        <span class="sp-title"><span class="sp-num">8.26</span> Disproportionation Reactions of Chlorine</span>
+        <span class="sp-meta"><span class="key-points">3 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-26">
+
+      <div class="example-block">
+        <h6><span class="ex-num">1</span> Water Treatment (Sterilisation)</h6>
+        <div class="eqn">Cl<sub>2</sub>(aq) + H<sub>2</sub>O(l) ⇌ HCl(aq) + HClO(aq)</div>
+        <p>Chlorine is reduced to −1 in HCl and oxidised to +1 in chloric(I) acid (HClO). HClO acts as a sterilising agent killing bacteria.</p>
+      </div>
+
+      <div class="example-block">
+        <h6><span class="ex-num">2</span> With COLD Dilute Alkali (15°C / 20°C)</h6>
+        <div class="eqn">Cl<sub>2</sub>(aq) + 2NaOH(aq) → NaCl(aq) + NaClO(aq) + H<sub>2</sub>O(l)</div>
+        <div class="eqn">Cl<sub>2</sub>(aq) + 2OH<sup>−</sup>(aq) → Cl<sup>−</sup>(aq) + ClO<sup>−</sup>(aq) + H<sub>2</sub>O(l)</div>
+        <p>Chlorine is reduced to −1 (NaCl) and oxidised to +1 (NaClO, sodium chlorate(I) / active ingredient in household bleach).</p>
+      </div>
+
+      <div class="example-block">
+        <h6><span class="ex-num">3</span> With HOT Concentrated Alkali (70°C)</h6>
+        <div class="eqn">3Cl<sub>2</sub>(aq) + 6NaOH(aq) → 5NaCl(aq) + NaClO<sub>3</sub>(aq) + 3H<sub>2</sub>O(l)</div>
+        <div class="eqn">3Cl<sub>2</sub>(aq) + 6OH<sup>−</sup>(aq) → 5Cl<sup>−</sup>(aq) + ClO<sub>3</sub><sup>−</sup>(aq) + 3H<sub>2</sub>O(l)</div>
+        <p>Chlorine is reduced to −1 (NaCl) and oxidised to +5 (NaClO<sub>3</sub>, sodium chlorate(V) / weedkiller).</p>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-27a">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-27-i">
+        <span class="sp-title"><span class="sp-num">8.27(i)</span> Reactions of Solid Halides with Concentrated Sulfuric Acid</span>
+        <span class="sp-meta"><span class="key-points">1 key point</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-27-i">
+      <ul class="point-list trend">
+        <li><strong>Trend in Halide Reducing Ability:</strong> Increases down Group 7 (F<sup>−</sup> &lt; Cl<sup>−</sup> &lt; Br<sup>−</sup> &lt; I<sup>−</sup>). Larger halide ions have lower electron attraction due to increased radius and shielding, donating electrons more easily (2X<sup>−</sup> → X<sub>2</sub> + 2e<sup>−</sup>).</li>
+      </ul>
+      <div class="table-wrap">
+        <table class="h2so4-table">
+          <thead>
+            <tr><th>Halide Ion</th><th>Reaction Equations</th><th>Observations &amp; Products</th><th>Role of Conc. H<sub>2</sub>SO<sub>4</sub></th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cl<sup>−</sup></strong> (Chloride)</td>
+              <td class="eqn-cell">NaCl(s) + H<sub>2</sub>SO<sub>4</sub>(l) → HCl(g) + NaHSO<sub>4</sub>(s)</td>
+              <td>Steamy white fumes of HCl(g)</td>
+              <td>Acid ONLY (Cl<sup>−</sup> cannot reduce H<sub>2</sub>SO<sub>4</sub>)</td>
+            </tr>
+            <tr>
+              <td><strong>Br<sup>−</sup></strong> (Bromide)</td>
+              <td class="eqn-cell">1. NaBr + H<sub>2</sub>SO<sub>4</sub> → HBr + NaHSO<sub>4</sub><br>2. 2HBr + H<sub>2</sub>SO<sub>4</sub> → Br<sub>2</sub> + SO<sub>2</sub> + 2H<sub>2</sub>O</td>
+              <td>Red-brown gas of Br<sub>2</sub>, choking gas of SO<sub>2</sub>, steamy fumes of HBr</td>
+              <td>Oxidising Agent (S reduced from +6 to +4)</td>
+            </tr>
+            <tr>
+              <td><strong>I<sup>−</sup></strong> (Iodide)</td>
+              <td class="eqn-cell">1. NaI + H<sub>2</sub>SO<sub>4</sub> → HI + NaHSO<sub>4</sub><br>2. 2HI + H<sub>2</sub>SO<sub>4</sub> → I<sub>2</sub> + SO<sub>2</sub> + 2H<sub>2</sub>O (S = +4)<br>3. 6HI + H<sub>2</sub>SO<sub>4</sub> → 3I<sub>2</sub> + S + 4H<sub>2</sub>O (S = 0)<br>4. 8HI + H<sub>2</sub>SO<sub>4</sub> → 4I<sub>2</sub> + H<sub>2</sub>S + 4H<sub>2</sub>O (S = −2)</td>
+              <td>Purple vapour/dark solid of I<sub>2</sub>, yellow solid of S, bad egg smell of H<sub>2</sub>S, choking SO<sub>2</sub></td>
+              <td>Strong Oxidising Agent (S reduced from +6 to +4, 0, and −2)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-27b">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-27-ii">
+        <span class="sp-title"><span class="sp-num">8.27(ii)</span> Silver Nitrate and Ammonia Tests for Halide Ions</span>
+        <span class="sp-meta"><span class="key-points">3 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-27-ii">
+      <h5 class="mini-head">Procedure:</h5>
+      <ol class="step-list">
+        <li>Acidify test solution with dilute nitric acid (HNO<sub>3</sub>) to prevent false precipitates from CO<sub>3</sub><sup>2−</sup> or OH<sup>−</sup> ions.</li>
+        <li>Add silver nitrate solution (AgNO<sub>3</sub>).</li>
+        <li>Add dilute aqueous ammonia (NH<sub>3</sub>), followed by concentrated aqueous NH<sub>3</sub>.</li>
+      </ol>
+
+      <div class="ag-tree" role="img" aria-label="Silver nitrate test decision tree">
+        <div class="tree-start">Unknown Halide ──▶ Add Dilute HNO<sub>3</sub> + AgNO<sub>3</sub></div>
+        <div class="tree-branches">
+          <div class="tree-branch">
+            <div class="ppt ppt-white">White Ppt (AgCl)</div>
+            <div class="tree-res">Soluble in Dilute NH<sub>3</sub></div>
+          </div>
+          <div class="tree-branch">
+            <div class="ppt ppt-cream">Cream Ppt (AgBr)</div>
+            <div class="tree-res">Insoluble in Dilute NH<sub>3</sub>, Soluble in Conc NH<sub>3</sub></div>
+          </div>
+          <div class="tree-branch">
+            <div class="ppt ppt-yellow">Yellow Ppt (AgI)</div>
+            <div class="tree-res">Insoluble in both Dilute &amp; Conc NH<sub>3</sub></div>
+          </div>
+        </div>
+      </div>
+
+      <ul class="point-list">
+        <li><strong>Chloride (Cl<sup>−</sup>):</strong> White precipitate (AgCl) → Soluble in dilute NH<sub>3</sub>.
+          <div class="eqn">AgCl(s) + 2NH<sub>3</sub>(aq) → Ag(NH<sub>3</sub>)<sub>2</sub><sup>+</sup>(aq) + Cl<sup>−</sup>(aq)</div>
+        </li>
+        <li><strong>Bromide (Br<sup>−</sup>):</strong> Cream precipitate (AgBr) → Insoluble in dilute NH<sub>3</sub>, soluble in concentrated NH<sub>3</sub>.</li>
+        <li><strong>Iodide (I<sup>−</sup>):</strong> Yellow precipitate (AgI) → Insoluble in both dilute and concentrated NH<sub>3</sub>.</li>
+      </ul>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-27c">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-27-iii">
+        <span class="sp-title"><span class="sp-num">8.27(iii)</span> Reactions of Hydrogen Halides</span>
+        <span class="sp-meta"><span class="key-points">2 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-27-iii">
+      <div class="example-block">
+        <h6><span class="ex-num">1</span> With Ammonia Gas (NH<sub>3</sub>)</h6>
+        <p>Forms dense white smoke of ammonium halide:</p>
+        <div class="eqn">HX(g) + NH<sub>3</sub>(g) → NH<sub>4</sub>X(s)</div>
+      </div>
+      <div class="example-block">
+        <h6><span class="ex-num">2</span> With Water</h6>
+        <p>Dissolves readily in water to form strong acidic solutions:</p>
+        <div class="eqn">HCl(g) + H<sub>2</sub>O(l) → H<sub>3</sub>O<sup>+</sup>(aq) + Cl<sup>−</sup>(aq)</div>
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <section class="sp" id="sp-8-28">
+      <button class="sp-toggle" type="button" aria-expanded="false" aria-controls="body-8-28">
+        <span class="sp-title"><span class="sp-num">8.28</span> Predictions for Fluorine and Astatine</span>
+        <span class="sp-meta"><span class="key-points">2 key points</span><span class="chev" aria-hidden="true"></span></span>
+      </button>
+      <div class="sp-body" id="body-8-28">
+      <ul class="point-list">
+        <li><strong>Fluorine (F<sub>2</sub>):</strong> Most reactive halogen, highest electronegativity, strongest oxidising agent.</li>
+        <li><strong>Astatine (At<sub>2</sub>):</strong> Dark black solid, highest melting point, lowest electronegativity, weakest oxidising agent, At<sup>−</sup> is the strongest reducing agent.</li>
+      </ul>
+      <div class="callout warn">
+        <strong>Critical Exam Exception:</strong> Silver fluoride (AgF) is SOLUBLE in water, so the acidified silver nitrate test cannot be used to detect F<sup>−</sup> ions!
+      </div>
+      <div class="sp-nav"><button type="button" class="btn btn-prev" aria-hidden="true">← Previous</button><button type="button" class="btn btn-next">Next section →</button></div>
+    </div>
+    </section>
+
+    <div class="next-step">
+      💡 <strong>Next Step:</strong> Would you like to practice a set of exam-style questions on Topic 8, or are you ready to move on to Topic 9 / Topic 10 (Kinetics, Equilibria &amp; Organic Chemistry) next?
+    </div>
+  </article>
+
+</main>
+
+<nav class="toc" id="tocNav" aria-label="Table of contents">
+  <h6>Your path through the topics</h6>
+  <div class="toc-group"><b><a href="#topic7">Topic 7 · Intermolecular Forces</a></b>
+    <ul>
+      <li class="toc-t7"><a href="#sp-7-1">7.1 Nature of IMF</a></li>
+      <li class="toc-t7"><a href="#sp-7-2">7.2 H-Bonding: H₂O, NH₃, HF</a></li>
+      <li class="toc-t7"><a href="#sp-7-3">7.3 Anomalous Water</a></li>
+      <li class="toc-t7"><a href="#sp-7-4">7.4 Predicting H-Bonding</a></li>
+      <li class="toc-t7"><a href="#sp-7-5">7.5 IMF &amp; Properties</a></li>
+      <li class="toc-t7"><a href="#sp-7-6">7.6 Solvent Choice</a></li>
+    </ul>
+  </div>
+  <div class="toc-group"><b><a href="#topic8">Topic 8 · Redox &amp; Groups</a></b>
+    <ul>
+      <li class="toc-part"><span>Part 8A · Redox</span></li>
+      <li class="toc-t8"><a href="#sp-8-1">8.1–8.2 Oxidation Numbers</a></li>
+      <li class="toc-t8"><a href="#sp-8-3">8.3–8.4 Stock Notation</a></li>
+      <li class="toc-t8"><a href="#sp-8-5">8.5–8.9 Redox Agents</a></li>
+      <li class="toc-t8"><a href="#sp-8-7">8.7–8.8 Disproportionation</a></li>
+      <li class="toc-t8"><a href="#sp-8-10">8.10 Half-Equations</a></li>
+      <li class="toc-part"><span>Part 8B · Groups 1 &amp; 2</span></li>
+      <li class="toc-t8"><a href="#sp-8-11">8.11 Ionisation Energy</a></li>
+      <li class="toc-t8"><a href="#sp-8-12">8.12 Reactivity</a></li>
+      <li class="toc-t8"><a href="#sp-8-13">8.13 O₂, Cl₂, H₂O</a></li>
+      <li class="toc-t8"><a href="#sp-8-14">8.14 Oxides &amp; Hydroxides</a></li>
+      <li class="toc-t8"><a href="#sp-8-15">8.15 Solubility Trends</a></li>
+      <li class="toc-t8"><a href="#sp-8-16">8.16 Thermal Stability</a></li>
+      <li class="toc-t8"><a href="#sp-8-17">8.17 Flame Tests</a></li>
+      <li class="toc-t8"><a href="#sp-8-18">8.18–8.19 Qualitative Tests</a></li>
+      <li class="toc-part"><span>Part 8C · Group 7</span></li>
+      <li class="toc-t8"><a href="#sp-8-24">8.24 Group 7 Trends</a></li>
+      <li class="toc-t8"><a href="#sp-8-25">8.25 Displacement</a></li>
+      <li class="toc-t8"><a href="#sp-8-26">8.26 Chlorine Disprop.</a></li>
+      <li class="toc-t8"><a href="#sp-8-27a">8.27(i) H₂SO₄ &amp; Halides</a></li>
+      <li class="toc-t8"><a href="#sp-8-27b">8.27(ii) Silver Nitrate</a></li>
+      <li class="toc-t8"><a href="#sp-8-27c">8.27(iii) Hydrogen Halides</a></li>
+      <li class="toc-t8"><a href="#sp-8-28">8.28 F &amp; At Predictions</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="section-nav" id="sectionNav" role="navigation" aria-label="Section navigation">
+  <button type="button" class="sn-btn" id="snPrev" aria-label="Previous section">←</button>
+  <span class="sn-current" id="snCurrent">Topic 7 · 26 sections</span>
+  <button type="button" class="sn-btn" id="snNext" aria-label="Next section">→</button>
+  <button type="button" class="sn-btn sn-expand" id="snExpand" aria-label="Open or close this section">▾</button>
+</div>
+
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
+<footer class="site-footer">
+  <p>Edexcel IAL Chemistry · Unit 2 revision notes · Topics 7 &amp; 8</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
